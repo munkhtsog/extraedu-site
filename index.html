@@ -159,6 +159,11 @@ nav.links a:hover { color: var(--text); }
 .pay .note { color: var(--muted); font-size: .9rem; margin: 0; }
 @media (max-width: 860px) { .price-grid { grid-template-columns: 1fr; } }
 
+.others-strip { background: var(--panel-2); border-bottom: 1px solid var(--line); }
+.others-strip .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; padding-block: 18px; }
+.others-strip .label { font-weight: 700; margin-right: 6px; }
+.others-strip a.chip { font-weight: 600; font-size: .92rem; padding: 7px 14px; border-radius: 999px; background: var(--ink); border: 1px solid var(--yellow); color: var(--text); text-decoration: none; }
+.others-strip a.chip:hover { background: var(--yellow); color: var(--ink); }
 /* other programs */
 .progs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .prog { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 22px; display: grid; gap: 10px; align-content: start; min-width: 0; }
@@ -248,6 +253,13 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     <div class="wrap">
       <span class="label">Сурах хэрэгслүүд:</span>
       <span class="tool">ChatGPT</span><span class="tool">Claude</span><span class="tool">n8n</span><span class="tool">Gmail</span><span class="tool">Google Sheets</span><span class="tool">Telegram</span><span class="tool">Voice Agent</span>
+    </div>
+  </div>
+
+  <div class="others-strip" aria-label="Бусад сургалтууд">
+    <div class="wrap">
+      <span class="label">Бусад сургалтууд:</span>
+      <a class="chip" href="#more">Герман хэл</a><a class="chip" href="#more">Au Pair</a><a class="chip" href="#more">Оюутны зуны ажил</a><a class="chip" href="#more">Ausbildung, сувилахуй</a><a class="chip" href="#more">FSJ/BFD, Gap year</a><a class="chip" href="#more">Их сургууль, виз</a>
     </div>
   </div>
 
