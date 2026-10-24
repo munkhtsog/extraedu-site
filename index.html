@@ -159,6 +159,21 @@ nav.links a:hover { color: var(--text); }
 .pay .note { color: var(--muted); font-size: .9rem; margin: 0; }
 @media (max-width: 860px) { .price-grid { grid-template-columns: 1fr; } }
 
+/* other programs */
+.progs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.prog { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 22px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.prog .kind { font-size: .76rem; text-transform: uppercase; letter-spacing: .1em; color: var(--cyan); font-weight: 700; }
+.prog h3 { font-size: 1.1rem; font-weight: 700; }
+.prog p { margin: 0; color: var(--muted); font-size: .95rem; }
+.prog ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: .93rem; }
+.prog li { display: flex; gap: 8px; }
+.prog li::before { content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--yellow); margin-top: .55em; }
+.prog .req { font-size: .86rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 10px; }
+.progs-note { margin-top: 18px; color: var(--muted); font-size: .95rem; }
+.progs-note a { color: var(--cyan); font-weight: 600; }
+@media (max-width: 980px) { .progs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .progs { grid-template-columns: 1fr; } }
+
 /* contact */
 .contact { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .contact > div { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 22px; display: grid; gap: 10px; align-content: start; min-width: 0; }
@@ -197,6 +212,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <a href="#program">Хөтөлбөр</a>
       <a href="#who">Хэнд зориулсан</a>
       <a href="#price">Үнэ</a>
+      <a href="#more">Бусад сургалт</a>
       <a href="#contact">Холбоо барих</a>
     </nav>
     <a class="btn btn-primary" href="#contact">Бүртгүүлэх</a>
@@ -331,6 +347,25 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <a class="btn btn-primary" href="#contact">Одоо бүртгүүлэх</a>
     </div>
   </div>
+
+  <section id="more" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Бусад сургалт, хөтөлбөр</span>
+        <h2>Герман хэл ба гадаадад суралцах, ажиллах хөтөлбөрүүд</h2>
+        <p class="lede">Манай төв оффис Extratour Education Agency Mongolia-ийн хэрэгжүүлдэг хөтөлбөрүүд. Extratour нь 2002 оноос Германд суралцах, ажиллах хөтөлбөр зуучилж байна.</p>
+      </div>
+      <div class="progs">
+        <article class="prog"><span class="kind">Хэлний сургалт</span><h3>Герман хэлний сургалт</h3><p>A1–B2 түвшний анги мэргэжлийн багшийн удирдлагатай.</p><ul><li>Эрчимжүүлсэн анги</li><li>Гёте шалгалтын бэлтгэл</li><li>Гадаадад суралцах, ажиллах хөтөлбөрийн суурь</li></ul><p class="req">Шаардлага: Түвшин тогтоох шалгалт өгч анги сонгоно</p></article>
+        <article class="prog"><span class="kind">Соёлын солилцоо</span><h3>Au Pair</h3><p>Германд 1 жил зочин айлд амьдарч хэлээ сайжруулах хөтөлбөр.</p><ul><li>Байр, хоол үнэгүй</li><li>Сар бүр гарын мөнгө</li><li>Хэлний курс</li></ul><p class="req">Шаардлага: 18–26 нас, A1/A2 Гёте сертификат</p></article>
+        <article class="prog"><span class="kind">Оюутанд</span><h3>Оюутны зуны ажил</h3><p>Зуны амралтаараа Европт албан ёсоор ажиллаж, орлого олж, хэлээ сайжруулна.</p><ul><li>Хууль ёсны ажлын гэрээ</li><li>Байрны зохион байгуулалт</li><li>Виз, бичиг баримтын зөвлөгөө</li></ul><p class="req">Шаардлага: Идэвхтэй суралцаж буй оюутан</p></article>
+        <article class="prog"><span class="kind">Мэргэжил</span><h3>Ausbildung, сувилахуй</h3><p>Германд цалинтай суралцаж мэргэжил эзэмших 2–3 жилийн дуал систем.</p><ul><li>Сар бүр цалин</li><li>Герман улсын диплом</li><li>Төгссөний дараа ажиллах боломж</li></ul><p class="req">Шаардлага: Бүрэн дунд боловсрол, Герман хэл B1–B2</p></article>
+        <article class="prog"><span class="kind">Сайн дурын ажил</span><h3>FSJ/BFD, Gap year</h3><p>Германы төрөөс дэмждэг 6–18 сарын сайн дурын ажлын хөтөлбөр.</p><ul><li>Байр, хоолны дэмжлэг</li><li>Сар бүр гарын мөнгө</li><li>Даатгал, семинарууд</li></ul><p class="req">Шаардлага: 18–26 нас, Герман хэл A2–B1</p></article>
+        <article class="prog"><span class="kind">Зөвлөгөө</span><h3>Их сургууль, виз</h3><p>Герман, Австрийн их сургууль, хэлний сургуульд элсэх зөвлөгөө.</p><ul><li>Сургууль, мэргэжил сонголт</li><li>Бичиг баримт бүрдүүлэлт</li><li>Элчин сайдын ярилцлагад бэлтгэх</li></ul><p class="req">Шаардлага: Нас, боловсрол, хэлний түвшингээс хамаарна</p></article>
+      </div>
+      <p class="progs-note">Дэлгэрэнгүй мэдээлэл, бүртгэл: 7575 8800 · <a href="https://www.facebook.com/extratouragency" target="_blank" rel="noopener">Extratour Education Agency</a> · Про Ван оффис, 607 тоот</p>
+    </div>
+  </section>
 
   <section id="contact">
     <div class="wrap">
