@@ -164,6 +164,17 @@ nav.links a:hover { color: var(--text); }
 .others-strip .label { font-weight: 700; margin-right: 6px; }
 .others-strip a.chip { font-weight: 600; font-size: .92rem; padding: 7px 14px; border-radius: 999px; background: var(--ink); border: 1px solid var(--yellow); color: var(--text); text-decoration: none; }
 .others-strip a.chip:hover { background: var(--yellow); color: var(--ink); }
+.soon-head { margin-top: 40px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 14px; }
+.soon-head h3 { font-family: var(--display); font-size: clamp(1.2rem, 2.4vw, 1.5rem); }
+.soon-badge { font-size: .76rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--ink); background: var(--yellow); padding: 4px 10px; border-radius: 999px; }
+.soon { margin-top: 16px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.soon article { background: var(--panel); border: 1px dashed var(--yellow); border-radius: 16px; padding: 18px 20px; display: grid; gap: 6px; min-width: 0; }
+.soon h4 { margin: 0; font-size: 1.05rem; font-weight: 700; }
+.soon p { margin: 0; color: var(--muted); font-size: .92rem; }
+@media (max-width: 860px) { .soon { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .soon { grid-template-columns: 1fr; } }
+.others-strip .soon-label { font-weight: 700; margin-left: 10px; margin-right: 6px; color: var(--yellow); }
+.others-strip span.chip { font-weight: 600; font-size: .92rem; padding: 7px 14px; border-radius: 999px; background: var(--ink); border: 1px dashed var(--line); color: var(--muted); }
 /* other programs */
 .progs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .prog { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 22px; display: grid; gap: 10px; align-content: start; min-width: 0; }
@@ -260,6 +271,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     <div class="wrap">
       <span class="label">Бусад сургалтууд:</span>
       <a class="chip" href="#more">Герман хэл</a><a class="chip" href="#more">Au Pair</a><a class="chip" href="#more">Оюутны зуны ажил</a><a class="chip" href="#more">Ausbildung, сувилахуй</a><a class="chip" href="#more">FSJ/BFD, Gap year</a><a class="chip" href="#more">Их сургууль, виз</a>
+      <span class="soon-label">Тун удахгүй:</span><span class="chip">Англи хэл</span><span class="chip">Хятад хэл</span><span class="chip">Солонгос хэл</span><span class="chip">Математик</span><span class="chip">Монгол хэл</span><span class="chip">Монгол бичиг</span>
     </div>
   </div>
 
@@ -376,6 +388,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <article class="prog"><span class="kind">Зөвлөгөө</span><h3>Их сургууль, виз</h3><p>Герман, Австрийн их сургууль, хэлний сургуульд элсэх зөвлөгөө.</p><ul><li>Сургууль, мэргэжил сонголт</li><li>Бичиг баримт бүрдүүлэлт</li><li>Элчин сайдын ярилцлагад бэлтгэх</li></ul><p class="req">Шаардлага: Нас, боловсрол, хэлний түвшингээс хамаарна</p></article>
       </div>
       <p class="progs-note">Дэлгэрэнгүй мэдээлэл, бүртгэл: 7575 8800 · <a href="https://www.facebook.com/extratouragency" target="_blank" rel="noopener">Extratour Education Agency</a> · Про Ван оффис, 607 тоот</p>
+      <div class="soon-head"><h3>Тун удахгүй нээгдэх сургалтууд</h3><span class="soon-badge">Тун удахгүй</span></div>
+      <div class="soon"><article><h4>Англи хэл</h4><p>Удахгүй нээгдэнэ · урьдчилан бүртгэж байна</p></article><article><h4>Хятад хэл</h4><p>Удахгүй нээгдэнэ · урьдчилан бүртгэж байна</p></article><article><h4>Солонгос хэл</h4><p>Удахгүй нээгдэнэ · урьдчилан бүртгэж байна</p></article><article><h4>Математик</h4><p>Удахгүй нээгдэнэ · урьдчилан бүртгэж байна</p></article><article><h4>Монгол хэл</h4><p>Удахгүй нээгдэнэ · урьдчилан бүртгэж байна</p></article><article><h4>Монгол бичиг</h4><p>Удахгүй нээгдэнэ · урьдчилан бүртгэж байна</p></article></div>
+      <p class="progs-note">Эхлэх хугацаа, бүртгэлийн мэдээллийг Facebook пэйжээрээ зарлана. Урьдчилан бүртгүүлэх: 9907 1414, 7575 8800.</p>
+
     </div>
   </section>
 
