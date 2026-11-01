@@ -30,7 +30,7 @@
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation: none !important; transition: none !important; } }
 body { background: var(--ink); color: var(--text); font-family: var(--body); font-size: 17px; line-height: 1.6; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--ink); }
@@ -212,6 +212,34 @@ footer { padding-block: 32px; color: var(--muted); font-size: .88rem; }
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
 .slogan { font-family: var(--display); font-weight: 700; color: var(--text); }
 .toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--yellow); color: var(--ink); font-weight: 700; padding: 10px 18px; border-radius: 10px; z-index: 30; }
+
+/* news / announcements (from the Facebook page) */
+.news-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.news { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 22px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.news.feature { border-color: var(--yellow); }
+.news-date { display: flex; align-items: center; gap: 12px; }
+.news-date .d { flex: none; width: 58px; border-radius: 12px; background: var(--blue); color: #fff; text-align: center; padding: 6px 0 7px; line-height: 1.05; }
+.news-date .d b { display: block; font-family: var(--display); font-size: 1.45rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+.news-date .d small { font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
+.news.feature .news-date .d { background: var(--yellow); color: var(--ink); }
+.news .kind { font-size: .76rem; text-transform: uppercase; letter-spacing: .1em; color: var(--cyan); font-weight: 700; }
+.news h3 { font-size: 1.08rem; font-weight: 700; }
+.news p { margin: 0; color: var(--muted); font-size: .95rem; }
+.news ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: .93rem; }
+.news li { display: flex; gap: 8px; }
+.news li::before { content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--yellow); margin-top: .55em; }
+.news .meta { display: grid; gap: 4px; font-size: .9rem; border-top: 1px solid var(--line); padding-top: 10px; }
+.news .meta span { color: var(--muted); }
+.news .meta b { color: var(--text); font-weight: 600; }
+.news .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.news .actions .btn { padding: 9px 14px; font-size: .9rem; }
+.news .meta .price-pill { justify-self: start; font-family: var(--display); font-weight: 700; color: var(--yellow); font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+.news-wide { grid-column: 1 / -1; display: grid; grid-template-columns: 1.1fr .9fr; gap: 20px; align-items: center; background: linear-gradient(180deg, var(--panel-2), var(--panel)); }
+.news-wide .call { font-family: var(--display); font-weight: 800; font-size: clamp(1.8rem, 4.5vw, 2.6rem); color: var(--yellow); text-decoration: none; font-variant-numeric: tabular-nums; }
+.news-wide ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 980px) { .news-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .news-wide { grid-template-columns: 1fr; } .news-wide ul { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .news-grid { grid-template-columns: 1fr; } }
 </style>
 <style>body{margin:0} img{max-width:100%} [hidden]{display:none!important}</style>
 </head>
@@ -225,6 +253,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <span class="brand-name">EXTRA EDU<small>Сургалтын төв</small></span>
     </a>
     <nav class="links" aria-label="Үндсэн цэс">
+      <a href="#news">Мэдээ</a>
       <a href="#program">Хөтөлбөр</a>
       <a href="#who">Хэнд зориулсан</a>
       <a href="#price">Үнэ</a>
@@ -274,6 +303,78 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <span class="soon-label">Тун удахгүй:</span><span class="chip">Англи хэл</span><span class="chip">Хятад хэл</span><span class="chip">Солонгос хэл</span><span class="chip">Математик</span><span class="chip">Монгол хэл</span><span class="chip">Монгол бичиг</span>
     </div>
   </div>
+
+  <section id="news">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Мэдээ, зарлал</span>
+        <h2>Ойрын арга хэмжээ ба шинэ сургалтууд</h2>
+        <p class="lede">EXTRA EDU болон төв салбар Extratour Education Agency-ийн шинэ зарлалууд. Бүх мэдээг <a class="fb" style="color:var(--cyan)" href="https://www.facebook.com/extraedu.mn" target="_blank" rel="noopener">Facebook пэйжээс</a> харна уу.</p>
+      </div>
+      <div class="news-grid">
+        <article class="news" data-until="2026-11-03T22:00:00+08:00">
+          <div class="news-date"><span class="d"><b>03</b><small>11-р сар</small></span><span class="kind">Онлайн уулзалт · Мягмар</span></div>
+          <h3>Германд сурах, амьдрах боломж</h3>
+          <p>Германаас ирэх туршлагатай зочинтой шууд ярилцаарай.</p>
+          <ul>
+            <li>Германд сурах, амьдрах бодит туршлага</li>
+            <li>Герман хэлний сургалт</li>
+            <li>Au Pair, FSJ, BFD, Ausbildung, Sommerjob, Arbeitskraft</li>
+            <li>Виз, бүртгэл, бичиг баримт</li>
+          </ul>
+          <div class="meta"><span>Цаг: <b>20:00 (УБ)</b> · 13:00 (Герман)</span><span>Хаана: <b>Google Meet</b></span></div>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://forms.gle/bvLvMFeJ98fSmKJ18" target="_blank" rel="noopener">Бүртгүүлэх</a>
+            <a class="btn btn-ghost" href="https://meet.google.com/kzj-cgvx-mrz" target="_blank" rel="noopener">Уулзалтад нэгдэх</a>
+          </div>
+        </article>
+        <article class="news" data-until="2026-11-04T20:00:00+08:00">
+          <div class="news-date"><span class="d"><b>04</b><small>11-р сар</small></span><span class="kind">Мэдээллийн өдөрлөг · Лхагва</span></div>
+          <h3>2027 оны Германы зуны ажлын хөтөлбөр</h3>
+          <p>Материал бүрдүүлэлтийн мэдээллийн өдөрлөг. Суудал хязгаартай тул формоор цагаа баталгаажуулна уу.</p>
+          <div class="meta"><span>Цаг: <b>17:00 эсвэл 18:00</b></span><span>Хаана: <b>Про Ван оффис, 6 давхар, 607 тоот</b></span></div>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://forms.gle/r8d66y49hgeGQUAb8" target="_blank" rel="noopener">Цаг баталгаажуулах</a>
+          </div>
+        </article>
+        <article class="news feature" data-until="2026-11-28T23:59:00+08:00">
+          <div class="news-date"><span class="d"><b>09</b><small>11-р сар</small></span><span class="kind">Онлайн сургалт · 100% live</span></div>
+          <h3>Герман хэлний онлайн сургалт</h3>
+          <p>Гэрээсээ Google Meet-ээр шууд хичээллэнэ. Сурах бичиг, нэмэлт материалаар хангана. Орон нутаг, гадаадаас ч суралцах боломжтой.</p>
+          <div class="meta">
+            <span><b>A1 анхан шат (эрчимжүүлсэн)</b></span>
+            <span>11/9–11/28, 3 долоо хоног · өдөр бүр 18:00–20:00</span>
+            <span>Багш: ХБНГУ-д амьдардаг мэргэжлийн багш</span>
+            <span class="price-pill">200,000₮</span>
+          </div>
+          <div class="meta">
+            <span><b>B1–B2 ахисан шат</b></span>
+            <span>11/9-нөөс · долоо хоногт 3 удаа · групп ба ганцаарчилсан</span>
+            <span>Багш: Австрид амьдардаг, олон жилийн туршлагатай · C1 рүү үргэлжлэх боломжтой</span>
+          </div>
+          <div class="actions">
+            <a class="btn btn-primary" href="tel:75758800">Бүртгүүлэх: 7575-8800</a>
+          </div>
+        </article>
+        <article class="news news-wide">
+          <div style="display:grid;gap:12px;min-width:0">
+            <span class="kind">Зөвлөгөө</span>
+            <h3>Нэг дуудлагаар Герман руу хаалгаа нээ</h3>
+            <p>Германд суралцах, ажиллах, мэргэжил эзэмших хүсэлтэй бол шууд залгаарай. Extratour Education Agency-ийн 2002 оноос хойшхи туршлага.</p>
+            <a class="call" href="tel:75758800">7575-8800</a>
+          </div>
+          <ul>
+            <li>Ausbildung: цалинтай суралцах хөтөлбөр</li>
+            <li>Герман хэл A1–B2, эрчимжүүлсэн анги</li>
+            <li>Их сургуулийн зуучлал</li>
+            <li>Au Pair, FSJ/BFD, Summer job / WAT</li>
+            <li>Виз бүрдүүлэлт, ярилцлагын бэлтгэл</li>
+            <li>Master AI автоматжуулалт (Бямба, Ням 10:00–12:00)</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
 
   <section id="program">
     <div class="wrap">
@@ -441,6 +542,13 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 <script>
 (function () {
   var toast = document.getElementById('toast'), t;
+
+  // Hide announcements whose date has passed (data-until), so the news list stays current.
+  var now = Date.now();
+  document.querySelectorAll('.news[data-until]').forEach(function (n) {
+    var until = Date.parse(n.getAttribute('data-until'));
+    if (!isNaN(until) && until < now) n.hidden = true;
+  });
   function show(msg) { toast.textContent = msg; toast.hidden = false; clearTimeout(t); t = setTimeout(function () { toast.hidden = true; }, 1600); }
   document.querySelectorAll('.copy').forEach(function (b) {
     b.addEventListener('click', function () {
