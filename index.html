@@ -237,6 +237,12 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 .news-wide { grid-column: 1 / -1; display: grid; grid-template-columns: 1.1fr .9fr; gap: 20px; align-items: center; background: linear-gradient(180deg, var(--panel-2), var(--panel)); }
 .news-wide .call { font-family: var(--display); font-weight: 800; font-size: clamp(1.8rem, 4.5vw, 2.6rem); color: var(--yellow); text-decoration: none; font-variant-numeric: tabular-nums; }
 .news-wide ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.news-photo { display: block; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: var(--ink); }
+.news-photo img { display: block; width: 100%; height: auto; }
+.news-photos { grid-column: 1 / -1; display: flex; gap: 10px; overflow-x: auto; padding-bottom: 4px; }
+.news-photos a { flex: none; display: block; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
+.news-photos img { display: block; height: 240px; width: auto; }
+@media (max-width: 600px) { .news-photos img { height: 180px; } }
 @media (max-width: 980px) { .news-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 760px) { .news-wide { grid-template-columns: 1fr; } .news-wide ul { grid-template-columns: 1fr; } }
 @media (max-width: 600px) { .news-grid { grid-template-columns: 1fr; } }
@@ -313,6 +319,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       </div>
       <div class="news-grid">
         <article class="news" data-until="2026-11-03T22:00:00+08:00">
+          <a class="news-photo" href="news-info.jpg" target="_blank" rel="noopener"><img src="news-info.jpg" width="1080" height="1350" alt="Германд сурах, амьдрах боломж: онлайн уулзалтын зурагт хуудас" loading="lazy"></a>
           <div class="news-date"><span class="d"><b>03</b><small>11-р сар</small></span><span class="kind">Онлайн уулзалт · Мягмар</span></div>
           <h3>Германд сурах, амьдрах боломж</h3>
           <p>Германаас ирэх туршлагатай зочинтой шууд ярилцаарай.</p>
@@ -329,6 +336,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           </div>
         </article>
         <article class="news" data-until="2026-11-04T20:00:00+08:00">
+          <a class="news-photo" href="news-summer.jpg" target="_blank" rel="noopener"><img src="news-summer.jpg" width="1080" height="1350" alt="2027 оны Германы зуны ажлын хөтөлбөрийн мэдээллийн өдөрлөг" loading="lazy"></a>
           <div class="news-date"><span class="d"><b>04</b><small>11-р сар</small></span><span class="kind">Мэдээллийн өдөрлөг · Лхагва</span></div>
           <h3>2027 оны Германы зуны ажлын хөтөлбөр</h3>
           <p>Материал бүрдүүлэлтийн мэдээллийн өдөрлөг. Суудал хязгаартай тул формоор цагаа баталгаажуулна уу.</p>
@@ -338,6 +346,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           </div>
         </article>
         <article class="news feature" data-until="2026-11-28T23:59:00+08:00">
+          <a class="news-photo" href="news-course.jpg" target="_blank" rel="noopener"><img src="news-course.jpg" width="940" height="788" alt="Экстратур Герман хэлний онлайн сургалт A1–C1" loading="lazy"></a>
           <div class="news-date"><span class="d"><b>09</b><small>11-р сар</small></span><span class="kind">Онлайн сургалт · 100% live</span></div>
           <h3>Герман хэлний онлайн сургалт</h3>
           <p>Гэрээсээ Google Meet-ээр шууд хичээллэнэ. Сурах бичиг, нэмэлт материалаар хангана. Орон нутаг, гадаадаас ч суралцах боломжтой.</p>
@@ -371,6 +380,11 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
             <li>Виз бүрдүүлэлт, ярилцлагын бэлтгэл</li>
             <li>Master AI автоматжуулалт (Бямба, Ням 10:00–12:00)</li>
           </ul>
+          <div class="news-photos">
+            <a href="news-call-1.jpg" target="_blank" rel="noopener"><img src="news-call-1.jpg" width="1280" height="720" alt="Германы зуны ажлын 3 сарын хөтөлбөр" loading="lazy"></a>
+            <a href="news-call-2.jpg" target="_blank" rel="noopener"><img src="news-call-2.jpg" width="960" height="1200" alt="Au Pair in Deutschland хөтөлбөр" loading="lazy"></a>
+            <a href="news-call-3.jpg" target="_blank" rel="noopener"><img src="news-call-3.jpg" width="843" height="1192" alt="Герман хэлний эрчимжүүлсэн A1.2 анги" loading="lazy"></a>
+          </div>
         </article>
       </div>
     </div>
